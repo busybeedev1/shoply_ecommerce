@@ -1,0 +1,211 @@
+/* ==========================================
+   Product Details Container
+========================================== */
+.product-details {
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   Images Gallery
+========================================== */
+.product-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.product-images img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background: #fafafa;
+    border-radius: 18px;
+    border: 1px solid #ececec;
+    transition: 0.35s ease;
+    cursor: pointer;
+}
+
+.product-images img:hover {
+    transform: scale(1.05);
+    border-color: #FF6A00;
+    box-shadow: 0 12px 30px rgba(255, 106, 0, 0.15);
+}
+
+/* ==========================================
+   Product Info Section
+========================================== */
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Product Name */
+.product-info h1 {
+    font-size: 2.3rem;
+    line-height: 1.3;
+    color: #222;
+    margin: 0;
+}
+
+/* Description */
+.product-info p:nth-of-type(1) {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* Price */
+.product-info h2 {
+    color: #FF6A00;
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Discount Badge */
+.product-info p:nth-of-type(2) {
+    display: inline-block;
+    width: fit-content;
+    background: rgba(255, 106, 0, 0.1);
+    color: #FF6A00;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* Rating */
+.product-info p:nth-of-type(3) {
+    color: #f5a623;
+    font-weight: 600;
+}
+
+/* Brand */
+.product-info p:nth-of-type(4) {
+    font-weight: 600;
+    color: #444;
+}
+
+/* Availability Status Badge */
+.product-info p:nth-of-type(5) {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.4rem 0.9rem;
+    background: #eafaf1;
+    color: #16a34a;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* Stock & Minimum Order */
+.product-info p:nth-of-type(6),
+.product-info p:nth-of-type(7) {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   Action Buttons (Buy & Add to Cart)
+========================================== */
+.product-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.buy-btn,
+.cart-btn {
+    flex: 1;
+    /* Makes buttons equal width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.buy-btn {
+    background: #FF6A00;
+    color: white;
+    box-shadow: 0 4px 14px rgba(255, 106, 0, 0.2);
+}
+
+.buy-btn:hover {
+    background: #e45f00;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3);
+}
+
+.cart-btn {
+    background: white;
+    border: 2px solid #FF6A00;
+    color: #FF6A00;
+}
+
+.cart-btn:hover {
+    background: #fff5ef;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   Responsive Design
+========================================== */
+@media (max-width: 992px) {
+    .product-details {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .product-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-images {
+        grid-template-columns: 1fr;
+    }
+
+    .product-images img {
+        height: 220px;
+    }
+
+    .product-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .product-info h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-details {
+        padding: 1.25rem;
+        margin: 1rem;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .buy-btn,
+    .cart-btn {
+        width: 100%;
+    }
+}
