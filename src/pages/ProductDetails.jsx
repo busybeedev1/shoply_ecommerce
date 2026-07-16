@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getProduct } from "../../../servicesapi";
+import { getProduct } from "../servicesapi";
 import "./productDetails.css";
 
 import React from "react";
