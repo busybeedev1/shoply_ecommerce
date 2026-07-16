@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import HeroSection from "../components/HeroSection";
 import ScrollingBanner from "../components/ScrollingBanner";
-import { getProducts } from "../servicesapi";
+import { getProducts } from "../../../servicesapi";
 import "./home.css";
 
 function Home() {
