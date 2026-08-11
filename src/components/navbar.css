@@ -1,61 +1,82 @@
+```css
 /* =====================
    Navbar
 ===================== */
 
 .navbar {
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 30px);
     max-width: 1600px;
-    z-index: 1000;
     height: 55px;
+    z-index: 1000;
+
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid #f1f1f1;
+
+    border: 1px solid #f1f1f1;
     border-radius: 18px;
+
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-container {
-    max-width: 1600px;
+    width: 100%;
     height: 100%;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 1.5rem;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20rem;
+
+    gap: 1rem;
+    box-sizing: border-box;
 }
 
-/* Logo */
+
+/* =====================
+   Logo
+===================== */
+
 .logo {
+    flex-shrink: 0;
+
     font-size: 1.6rem;
     font-weight: 800;
     text-decoration: none;
     color: #111;
+
     letter-spacing: -0.5px;
 }
 
-.logo span {
+.logo:hover {
     color: #ff6a00;
 }
 
-/* Navigation */
+
+/* =====================
+   Navigation
+===================== */
+
 .nav-links {
     display: flex;
-    gap: 1.8rem;
     align-items: center;
+    gap: 1.8rem;
 }
 
 .nav-links a {
     position: relative;
+
     text-decoration: none;
     color: #555;
+
     font-weight: 500;
-    transition: .25s ease;
     font-size: 0.95rem;
+
+    transition: 0.25s ease;
 }
 
 .nav-links a:hover {
@@ -69,94 +90,135 @@
 
 .nav-links a.active::after {
     content: "";
+
     position: absolute;
     left: 0;
     bottom: -10px;
+
     width: 100%;
     height: 2px;
+
     background: #ff6a00;
     border-radius: 10px;
 }
 
-/* Actions */
+
+/* =====================
+   Actions
+===================== */
+
 .navbar-actions {
-    padding-left: 4rem;
     display: flex;
     align-items: center;
+
     gap: 1.2rem;
-    justify-content: space-between;
+    flex-shrink: 0;
 }
 
 .icon-btn {
     position: relative;
+
     font-size: 0.9rem;
     text-decoration: none;
     color: #333;
-    transition: .25s;
+
+    transition: 0.25s;
 }
 
 .icon-btn:hover {
     color: #ff6a00;
 }
 
-/* Cart badge */
+
+/* =====================
+   Cart Badge
+===================== */
+
 .cart span {
     position: absolute;
+
     top: -8px;
     right: -10px;
+
     width: 14px;
     height: 12px;
+
     border-radius: 50%;
+
     background: #ff6a00;
     color: white;
-    font-size: .7rem;
+
+    font-size: 0.7rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Login Button */
+
+/* =====================
+   Login Button
+===================== */
+
 .login-btn {
-    /* margin-left: 3rem; */
     background: #ff6a00;
     color: white;
+
     text-decoration: none;
-    padding: .5rem 2.2rem;
+
+    padding: 0.5rem 2.2rem;
+
     border-radius: 999px;
+
     font-weight: 600;
-    transition: .25s ease;
+
+    transition: 0.25s ease;
+
     box-shadow: 0 10px 20px rgba(255, 106, 0, 0.2);
+
+    white-space: nowrap;
 }
 
 .login-btn:hover {
     background: #e85f00;
 }
 
-/* Mobile menu */
-.menu-btn {
-    display: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.menu-btn {
-    display: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #111;
-}
 
 /* =====================
- Responsive
+   Mobile Menu Button
 ===================== */
 
-@media (max-width: 900px) {
+.menu-btn {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    padding: 0;
+    margin: 0;
+
+    font-size: 1.5rem;
+    color: #111;
+
+    flex-shrink: 0;
+}
+
+
+/* ==================================================
+   TABLET
+   768px - 1023px
+================================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
     .navbar {
-        margin: 0.5rem 1rem;
-        border-radius: 14px;
+        width: calc(100% - 24px);
+    }
+
+    .navbar-container {
+        padding: 0 1.2rem;
     }
 
     .menu-btn {
@@ -165,24 +227,161 @@
 
     .nav-links {
         position: absolute;
-        top: 75px;
+
+        top: 65px;
         left: 0;
+
         width: 100%;
+
         background: white;
+
         flex-direction: column;
-        padding: 2rem;
+
+        padding: 1.5rem;
+
         gap: 1.2rem;
-        transform: translateY(-120%);
-        transition: .3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
+        border-radius: 14px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+        transform: translateY(-150%);
+        opacity: 0;
+        pointer-events: none;
+
+        transition: 0.3s ease;
     }
 
     .nav-links.active {
         transform: translateY(0);
+
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .navbar-actions .icon-btn,
     .login-btn {
         display: none;
     }
+
 }
+
+
+/* ==================================================
+   MOBILE
+   0px - 767px
+================================================== */
+
+@media (max-width: 767px) {
+
+    .navbar {
+        top: 8px;
+        left: 50%;
+
+        width: calc(100% - 20px);
+
+        height: 54px;
+
+        border-radius: 14px;
+
+        box-sizing: border-box;
+    }
+
+    .navbar-container {
+        padding: 0 0.9rem;
+
+        gap: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* Logo */
+
+    .logo {
+        font-size: 1.35rem;
+
+        flex-shrink: 1;
+
+        white-space: nowrap;
+    }
+
+
+    /* Hide desktop navigation */
+
+    .nav-links {
+        position: absolute;
+
+        top: 64px;
+        left: 0;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        background: white;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 1.5rem 1rem;
+
+        gap: 1.2rem;
+
+        border-radius: 14px;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+        transform: translateY(-150%);
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        pointer-events: auto;
+    }
+
+
+    /* Hide desktop actions */
+
+    .navbar-actions {
+        display: none;
+    }
+
+
+    /* Hamburger */
+
+    .menu-btn {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px;
+
+        flex-shrink: 0;
+    }
+
+    .menu-btn:hover {
+        color: #ff6a00;
+    }
+
+
+    /* Remove underline from mobile menu */
+
+    .nav-links a.active::after {
+        display: none;
+    }
+
+}
+
