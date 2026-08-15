@@ -12,8 +12,8 @@ import HeroSection from "./components/HeroSection";
 function App() {
   return (
     <BrowserRouter>
-      <ScrollingBanner />
       <Navbar />
+      <ScrollingBanner />
       <Routes>
 
         <Route path="/" element={<Home />} />
